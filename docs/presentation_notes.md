@@ -11,6 +11,41 @@
 “The main objective is to create AI systems that interpret complex data and provide actionable recommendations, starting with a cucumber mildew use case and expanding toward full automation.”
 
 ### Slide 5: Use Case 1
+
+
+```mermaid
+
+flowchart LR
+    %% Actor
+    A[👤 Diamond Sow]
+
+    %% Casos de uso (en óvalos compactos)
+    UC1([Receive Natural Language Reports])
+    UC2([Receive Actionable Alerts])
+    UC3([View Dashboards])
+    UC4([Validate Disease Predictions])
+    UC5([Review Scientific Data Integration])
+    UC6([Ingest Sensor Data via Pub/Sub])
+    UC7([Process Data with Dataflow])
+    UC8([Store & Aggregate Data in BigQuery])
+    UC9([Generate AI Recommendations with Vertex AI])
+
+    %% Relaciones
+    A --> UC1
+    A --> UC2
+    A --> UC3
+    A --> UC4
+    A --> UC5
+    A --> UC6
+    A --> UC7
+    A --> UC8
+    A --> UC9
+
+
+
+```
+
+
 “This POC will predict cucumber downy mildew risk based on multiple environmental factors and trigger irrigation-based potassium application when needed.”
 
 ### Slide 6: Use Case 2
@@ -34,7 +69,7 @@ flowchart LR
     F --> G
     G --> H[Natural language recommendations]
     H --> I[Mobile App / Dashboard / SMS Alerts]
-    I --> L[Cloud Function <br> Notification delivery (SMS, Email, APIs)]
+    I --> L[Cloud Function <br> Notification delivery SMS, Email, APIs]
     D --> K[Looker Studio <br> BI dashboards + reports]
 ```
 

@@ -37,7 +37,7 @@ backgroundImage: url('zazmic.png')
 - 📊 Build AI-driven monitoring for **plant health and production optimization**  
 - ⚡ Enable real-time **trigger-based alerts and recommendations**  
 - 🌿 Vertical focus: cucumber downy mildew prevention  
-- 🤖 Develop an **agentic system**: from reporting → to recommending → to automating actions  
+- 🤖 Develop an **agentic system**: from reporting → recommending → automating  
 
 ---
 
@@ -48,7 +48,7 @@ backgroundImage: url('zazmic.png')
 ## Use Case 1 – AI Reports from Sensor Data
 - **Problem:** Sensor data is raw and fragmented, difficult to interpret manually  
 - **POC Solution:**  
-  - Use GCP (BigQuery + Vertex AI) to process Ubibot data  
+  - Use **Pub/Sub + Dataflow + BigQuery** to process Ubibot data  
   - Train models to identify anomalies & generate **natural language reports**  
 - **Outcome:** Automated, reliable reporting of plant health indicators  
 
@@ -66,8 +66,8 @@ backgroundImage: url('zazmic.png')
 ## Use Case 3 – Actionable Alerts & Triggers
 - **Problem:** Farmers need timely, actionable steps (not just raw data)  
 - **POC Solution:**  
-  - Build AI agents to recommend actions (alerts via mobile/web)  
-  - Future-ready integration with irrigation automation systems  
+  - AI agents generate recommendations (alerts via mobile/web)  
+  - Future integration with irrigation automation systems  
 - **Outcome:** Human-in-the-loop decision making → path toward automation  
 
 ---
@@ -77,9 +77,10 @@ backgroundImage: url('zazmic.png')
 ---
 
 ## Proposed Architecture
-Here should be the diagram `image_1_architecture`.
 
----
+
+
+
 
 # 📊 Estimate
 
