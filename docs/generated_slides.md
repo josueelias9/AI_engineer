@@ -51,7 +51,6 @@ Build an AI-driven system to:
 redo this. it has to do with the cucumber case
 
 
-
 ---
 
 # 🏗 Architecture  

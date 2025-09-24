@@ -22,19 +22,22 @@
 ### Slide 8: Architecture
 “This architecture integrates Ubibot sensors with GCP tools like Pub/Sub and BigQuery, builds AI models on Vertex AI and TensorFlow, and adds an agent layer for reporting and IoT triggers.”
 
-
 ```mermaid
 flowchart LR
-    A[Sensores IoT <br> Humedad, Temp, Radiación] -->|Datos en tiempo real| B[Pub/Sub]
-    B --> C[Dataflow <br> procesa datos]
-    C --> D[BigQuery <br> almacena histórico + métricas]
-    D --> E[Knowledge Base <br> reglas agrícolas]
-    D --> F[Resumen de métricas <br> 6h, 12h, 24h]
+    A[IoT Sensors <br> Humidity, Temp, Radiation] -->|Real-time data| B[Pub/Sub]
+    B --> C[Dataflow <br> data cleaning + metrics]
+    C --> D[BigQuery <br> historical storage + metrics]
+    D --> E[Knowledge Base <br> agricultural rules + enriched data]
+    D --> F[Aggregated Metrics <br> 6h, 12h, 24h summaries]
+    J[External Sources <br> Scientific papers + Client data] --> E
     E --> G[LLM <br> Vertex AI / API]
     F --> G
-    G --> H[Recomendación en lenguaje natural]
-    H --> I[Dashboard / App Móvil / Alerta SMS]
+    G --> H[Natural language recommendations]
+    H --> I[Mobile App / Dashboard / SMS Alerts]
+    I --> L[Cloud Function <br> Notification delivery (SMS, Email, APIs)]
+    D --> K[Looker Studio <br> BI dashboards + reports]
 ```
+
 
 ### Slide 9: Estimate
 “We’ll approach this project using Scrum. The plan is broken into sprints that cover integration, modeling, reporting, and POC validation.”
