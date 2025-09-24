@@ -26,7 +26,7 @@ def extract_content_from_prompt(file_path):
         print("❌ No se encontró contenido para las slides")
     
     # Extraer diagramas DrawIO
-    diagram_pattern = r'```(\w+_\w+_[\w\s]+)\s*<(.*?)```'
+    diagram_pattern = r'```(\w+_\w+_[\w\s]+)\s*(.*?)\s*```'
     diagram_matches = re.findall(diagram_pattern, content, re.DOTALL)
     
     if diagram_matches:
@@ -36,10 +36,8 @@ def extract_content_from_prompt(file_path):
             clean_name = re.sub(r'[-\s]+', '_', clean_name)
             filename = f"{clean_name}.dio"
             
-            # Asegurarse de que el XML esté bien formateado
+            # Tomar el contenido tal como está dentro del bloque de código
             xml_content = xml_content.strip()
-            if not xml_content.startswith('<?xml'):
-                xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_content
             
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(xml_content)
@@ -75,7 +73,7 @@ def main():
     """
     Función principal que ejecuta la extracción
     """
-    prompt_file = "/workspaces/AI_engineer/prompt.md"
+    prompt_file = "/workspaces/AI_engineer/output.md"
     
     print("🚀 Iniciando extracción de contenido...")
     print(f"📁 Leyendo archivo: {prompt_file}")

@@ -1,0 +1,40 @@
+<mxfile>
+  <diagram id="arch1" name="High-level AI Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <mxCell id="2" value="Ubibot Sensors" style="shape=ellipse;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="3" value="Pub/Sub" style="shape=process;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="50" width="100" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="4" value="BigQuery" style="shape=process;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="380" y="50" width="100" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="5" value="Vertex AI / TensorFlow" style="shape=process;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="540" y="50" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="6" value="AI Agent Layer" style="shape=process;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="740" y="50" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="7" value="Alerts / IoT Actions" style="shape=ellipse;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="920" y="50" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="8" edge="1" source="2" target="3" parent="1"/>
+        <mxCell id="9" edge="1" source="3" target="4" parent="1"/>
+        <mxCell id="10" edge="1" source="4" target="5" parent="1"/>
+        <mxCell id="11" edge="1" source="5" target="6" parent="1"/>
+        <mxCell id="12" edge="1" source="6" target="7" parent="1"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,30 @@
+<mxfile>
+  <diagram id="arch2" name="Agile Estimation Breakdown">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <mxCell id="2" value="Sprint 1: Data Integration" style="shape=rectangle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="3" value="Sprint 2: AI Prototyping" style="shape=rectangle;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="250" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="4" value="Sprint 3: Agent & Reporting" style="shape=rectangle;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="5" value="Sprint 4: POC Validation" style="shape=rectangle;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="670" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="6" edge="1" source="2" target="3" parent="1"/>
+        <mxCell id="7" edge="1" source="3" target="4" parent="1"/>
+        <mxCell id="8" edge="1" source="4" target="5" parent="1"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

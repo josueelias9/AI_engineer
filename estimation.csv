@@ -1,4 +1,9 @@
 EPIC,AS A,I WANT TO,SO THAT,SPs for BE,Assumptions and out of scope
-data,data,data,data,data,data
-data,data,data,data,data,data
-data,data,data,data,data,data
+Data Integration,Engineer,Ingest Ubibot sensor data into GCP Pub/Sub,We have a real-time streaming pipeline,5,Ubibot API credentials available
+Data Integration,Engineer,Store raw sensor data in BigQuery,We can run historical queries and ML training,3,Schema agreed with client
+AI Prototyping,Data Scientist,Build cucumber mildew prediction model,We can generate risk alerts based on humidity/temp/wind,8,Initial model is simple regression/classification
+AI Prototyping,Data Scientist,Train nutrient deficiency model using infrared data,We can detect nitrogen stress early,8,Infrared dataset availability
+Agent & Reporting,AI Engineer,Develop LLM-based reporting agent,We can generate human-readable recommendations,5,English-only reports at first
+Agent & Reporting,Engineer,Integrate agent with alert system (mobile/web),Farmers receive timely notifications,5,Client provides preferred notification channel
+POC Validation,QA,Test mildew prediction with real field data,We validate AI accuracy against agronomist expectations,3,Ground truth labels from agronomists
+POC Validation,Engineer,Simulate automated irrigation trigger,We verify end-to-end automation,3,No real-world irrigation triggered in POC
