@@ -1,9 +1,16 @@
-EPIC,AS A,I WANT TO,SO THAT,SPs for BE,Assumptions and out of scope
-Data Integration,Engineer,Ingest Ubibot sensor data into GCP Pub/Sub,We have a real-time streaming pipeline,5,Ubibot API credentials available
-Data Integration,Engineer,Store raw sensor data in BigQuery,We can run historical queries and ML training,3,Schema agreed with client
-AI Prototyping,Data Scientist,Build cucumber mildew prediction model,We can generate risk alerts based on humidity/temp/wind,8,Initial model is simple regression/classification
-AI Prototyping,Data Scientist,Train nutrient deficiency model using infrared data,We can detect nitrogen stress early,8,Infrared dataset availability
-Agent & Reporting,AI Engineer,Develop LLM-based reporting agent,We can generate human-readable recommendations,5,English-only reports at first
-Agent & Reporting,Engineer,Integrate agent with alert system (mobile/web),Farmers receive timely notifications,5,Client provides preferred notification channel
-POC Validation,QA,Test mildew prediction with real field data,We validate AI accuracy against agronomist expectations,3,Ground truth labels from agronomists
-POC Validation,Engineer,Simulate automated irrigation trigger,We verify end-to-end automation,3,No real-world irrigation triggered in POC
+Epic,As a,I want to,So that,Story Points,Assumptions,Out of Scope
+"Data Integration","Engineer","Ingest Ubibot sensor data into GCP Pub/Sub","We have a real-time streaming pipeline","5","Ubibot API credentials available","Ubibot device setup/config"
+"Data Integration","Engineer","Build Dataflow pipeline to parse/clean raw data","We ensure consistent schema and quality","5","Data quality rules from client","ML feature engineering"
+"Data Integration","Engineer","Store raw sensor data in BigQuery","We can run historical queries and ML training","5","Schema agreed with client","Aggregations/BI reports"
+"Data Integration","Engineer","Store daily archives in Cloud Storage","We have cheap, long-term raw data","3","GCS bucket created","Lifecycle rules tuning"
+"AI Prototyping","Data Scientist","Build cucumber mildew prediction model (basic regression/classification)","We can generate risk alerts based on humidity/temp/wind","8","Initial agronomy rules provided","Hyperparameter optimization"
+"AI Prototyping","Data Scientist","Improve mildew model with feature engineering & validation","We increase prediction accuracy","5","Access to labeled data","Production deployment"
+"AI Prototyping","Data Scientist","Train nutrient deficiency model using infrared data","We can detect nitrogen stress early","8","Infrared dataset available","External image augmentation"
+"AI Prototyping","Data Scientist","Validate models with cross-validation and agronomist review","We ensure AI outputs make sense","5","Ground truth labels from agronomists","Large-scale field testing"
+"Agent & Reporting","AI Engineer","Develop LLM-based reporting agent","We can generate human-readable recommendations","8","Start with English only","Multilingual reporting"
+"Agent & Reporting","Engineer","Build summarization layer (6h, 12h, 24h metrics) in Dataflow","LLM has structured context","5","Metrics defined with client","Custom visualizations"
+"Agent & Reporting","Engineer","Integrate agent with alert system (mobile/web/SMS)","Farmers receive timely notifications","8","Client provides notification channel","Irrigation automation"
+"Agent & Reporting","Engineer","Build dashboard with metrics + AI recommendations","Client sees both data + insights","5","Basic UI mockups","Advanced UX polish"
+"POC Validation","QA","Test mildew prediction with real field data","We validate AI accuracy against agronomist expectations","5","Field labels exist","Scaling to thousands of sensors"
+"POC Validation","Engineer","Simulate automated irrigation trigger","We verify end-to-end automation","5","No real-world irrigation triggered","Production automation"
+"POC Validation","QA","Run end-to-end integration test (sensors → alerts → reports)","We confirm all components work together","5","Test environment available","Performance testing"

@@ -3,12 +3,10 @@ marp: true
 theme: default
 backgroundImage: url('zazmic.png')
 paginate: true
+
 ---
 
-<!-- _class: lead -->
-<!-- backgroundImage: url('main.png') -->
-# 🌱 Diamond Sow Gardens  
-AI-Powered Agricultural Monitoring & Action Automation  
+![bg](main.png)
 
 ---
 
@@ -30,38 +28,29 @@ They combine modern farming practices with advanced technology to improve crop y
 ---
 
 # 🎯 Goals  
-- Build an AI-driven system to:  
-  - Analyze multi-dimensional sensor data in real time  
-  - Generate actionable insights & reports  
-  - Start with targeted POC use cases (e.g., cucumber downy mildew)  
-  - Enable scalable automation for future pest & nutrient management  
-- Long-term: Fully automate corrective actions through IoT systems  
+Build an AI-driven system to:  
+- Analyze multi-dimensional sensor data in real time  
+- Generate actionable insights & reports  
+- Start with targeted POC use cases (e.g., cucumber downy mildew)  
+- Enable scalable automation for future pest & nutrient management  
 
 ---
 
-# 🛠 Use Cases (POC)  
+# 🛠 Use Cases
 
 ## Use Case 1:  
 **Cucumber Downy Mildew Prediction**  
-- Inputs: humidity, temperature, wind, spectrometry data  
+- Inputs: humidity, temperature, wind, spectrometry data (this is data we will be mocking/creating)
 - Output: AI predicts disease susceptibility  
 - Action: Recommend or trigger potassium application via irrigation  
 
 ---
 
 ## Use Case 2:  
-**Nutrient Deficiency Detection (Infrared Analysis)**  
-- Inputs: spectrometry (infrared), soil moisture, moonlight exposure  
-- Output: Detect early nitrogen deficiency  
-- Action: Alert agronomists with suggested organic interventions  
 
----
+redo this. it has to do with the cucumber case
 
-## Use Case 3:  
-**Automated Environmental Optimization**  
-- Inputs: Ubibot data (temperature, humidity, light exposure)  
-- Output: Identify stress conditions for crops  
-- Action: Suggest optimal greenhouse adjustments (ventilation, irrigation schedule)  
+
 
 ---
 
