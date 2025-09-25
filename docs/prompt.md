@@ -67,6 +67,22 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('zazmic.png')
+style: |
+  section.right-align {
+    text-align: right !important;
+  }
+  section.right-align h1 {
+    text-align: right !important;
+    margin-bottom: 0.2em;
+  }
+  .text-right {
+    text-align: right !important;
+    display: block;
+    width: 100%;
+  }
+  .text-right h1 {
+    text-align: right !important;
+  }
 ---
 
 <!-- Slide 1 -->
@@ -74,8 +90,14 @@ backgroundImage: url('zazmic.png')
 
 ---
 
-# <CLIENT NAME> 
-# AI Workshop
+![bg](image-2.png)
+<div class="text-right">
+
+# <CLIENT NAME>
+## AI Workshop
+
+</div>
+
 
 ---
 
@@ -89,33 +111,41 @@ backgroundImage: url('zazmic.png')
 
 ---
 
-## Overview – About
+# Overview
+## About
 <CONTENT>
 
 ---
 
-## Overview – Current State
+# Overview 
+## Current State
 <CONTENT>
 
 ---
 
-## Overview – Goals
+# Overview 
+## Goals
 <CONTENT>
 
 ---
 
 # 🎯 Use Cases
+put here the diagram diagram_slide_name
 <CONTENT>
 
 ---
 
 # 🏗️ Architecture
+put here the diagram diagram_slide_name
 <CONTENT>
 
 ---
 
 # 📊 Estimate
-<CONTENT>
+
+## Scrum-Based Estimation
+put here the table
+<CONTENT> 
 
 ---
 

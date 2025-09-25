@@ -4,6 +4,22 @@ theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('zazmic.png')
+style: |
+  section.right-align {
+    text-align: right !important;
+  }
+  section.right-align h1 {
+    text-align: right !important;
+    margin-bottom: 0.2em;
+  }
+  .text-right {
+    text-align: right !important;
+    display: block;
+    width: 100%;
+  }
+  .text-right h1 {
+    text-align: right !important;
+  }
 ---
 
 <!-- Slide 1 -->
@@ -11,8 +27,13 @@ backgroundImage: url('zazmic.png')
 
 ---
 
-# Diamond Sow Gardens 
-# AI Workshop
+![bg](image-2.png)
+<div class="text-right">
+
+# Diamond Sow Gardens
+## AI Workshop
+
+</div>
 
 
 ---
@@ -25,17 +46,18 @@ backgroundImage: url('zazmic.png')
 - Estimate
 - Next Steps
 
-
 ---
 
-## Overview – About
+# Overview
+## About
 - Diamond Sow Gardens specializes in sustainable agriculture and research  
 - Located in New Mexico, with partnerships including Los Alamos National Labs  
 - Mission: advance **organic and biodynamic farming practices** using technology  
 
 ---
 
-## Overview – Current State
+# Overview 
+## Current State
 - 🌡️ Sensor data (Ubibot, Davis Instruments) already collected in real time  
 - ✅ Basic automation in place (temperature-based sidewall control)  
 - ❌ Pain points:
@@ -45,7 +67,8 @@ backgroundImage: url('zazmic.png')
 
 ---
 
-## Overview – Goals
+# Overview 
+## Goals
 - 📊 Build AI-driven monitoring for **plant health and production optimization**
 - ⚡ Enable scheduled **trigger-based alerts and recommendations**  
 - 🌿 Vertical focus: cucumber downy mildew prevention (review)
@@ -87,8 +110,6 @@ backgroundImage: url('zazmic.png')
 ---
 
 # 📊 Estimate
-
----
 
 ## Scrum-Based Estimation
 Here should be a summary table of epics and stories.  
