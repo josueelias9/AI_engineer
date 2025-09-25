@@ -11,7 +11,20 @@ backgroundImage: url('zazmic.png')
 
 ---
 
-# 🌱 Diamond Sow Gardens – AI Solution Proposal
+# Diamond Sow Gardens 
+# AI Workshop
+
+
+---
+
+# Solutions Workshop Agenda
+
+- Overview
+- Use Cases
+- Architecture
+- Estimate
+- Next Steps
+
 
 ---
 
@@ -26,61 +39,52 @@ backgroundImage: url('zazmic.png')
 - 🌡️ Sensor data (Ubibot, Davis Instruments) already collected in real time  
 - ✅ Basic automation in place (temperature-based sidewall control)  
 - ❌ Pain points:
-  - No AI-based analysis of infrared spectrometry data  
-  - Limited ability to **predict disease/deficiencies**  
+  - No AI-based analysis 
   - Difficulty correlating multi-source data (humidity, moonlight, temperature, wind)  
   - Lack of automated **report generation and recommendations**  
 
 ---
 
 ## Overview – Goals
-- 📊 Build AI-driven monitoring for **plant health and production optimization**  
-- ⚡ Enable real-time **trigger-based alerts and recommendations**  
-- 🌿 Vertical focus: cucumber downy mildew prevention  
+- 📊 Build AI-driven monitoring for **plant health and production optimization**
+- ⚡ Enable scheduled **trigger-based alerts and recommendations**  
+- 🌿 Vertical focus: cucumber downy mildew prevention (review)
 - 🤖 Develop an **agentic system**: from reporting → recommending → automating  
 
 ---
 
-# 🎯 Use Cases (POC Focus)
+# 🎯 Use Cases
+![alt text](image.png)
 
 ---
 
-## Use Case 1 – AI Reports from Sensor Data
-- **Problem:** Sensor data is raw and fragmented, difficult to interpret manually  
-- **POC Solution:**  
-  - Use **Pub/Sub + Dataflow + BigQuery** to process Ubibot data  
-  - Train models to identify anomalies & generate **natural language reports**  
-- **Outcome:** Automated, reliable reporting of plant health indicators  
+- **Generate AI Reports**  
+  - Automatic interpretation of multi-sensor data  
+  - Natural language summaries of plant health  
 
----
+- **Predict Cucumber Downy Mildew**  
+  - Combine humidity, temperature, wind & spectrometry  
+  - Early alerts for treatment → reduce crop loss  
 
-## Use Case 2 – Cucumber Downy Mildew Prediction
-- **Problem:** Disease prediction requires combining humidity, temperature, wind, and spectrometry  
-- **POC Solution:**  
-  - Develop ML classification model for mildew risk levels  
-  - Trigger recommendations for potassium application  
-- **Outcome:** Early warnings, optimized treatment timing, reduced crop loss  
+- **Receive Actionable Alerts**  
+  - Recommendations via mobile/web  
+  - Human-in-the-loop decision support  
 
----
-
-## Use Case 3 – Actionable Alerts & Triggers
-- **Problem:** Farmers need timely, actionable steps (not just raw data)  
-- **POC Solution:**  
-  - AI agents generate recommendations (alerts via mobile/web)  
-  - Future integration with irrigation automation systems  
-- **Outcome:** Human-in-the-loop decision making → path toward automation  
 
 ---
 
 # 🏗️ Architecture
+![alt text](image-1.png)
+- Ingest data streams with **Pub/Sub**  
+- Process data with **Dataflow**  
+- Store and correlate metrics in **BigQuery**  
+- Generate recommendations with **Vertex AI**
+
+
+
+
 
 ---
-
-## Proposed Architecture
-
-
-
-
 
 # 📊 Estimate
 
@@ -96,6 +100,8 @@ Here should be a summary table of epics and stories.
 1. Confirm cucumber downy mildew dataset and triggers  
 2. Define success metrics for AI reports (precision, recall, farmer usability)  
 3. Build initial pipeline in GCP (BigQuery + Vertex AI + Pub/Sub)  
-4. Deliver **POC in 6–8 weeks**  
 5. Evaluate results and scale to additional crops  
 
+---
+
+# Thank you

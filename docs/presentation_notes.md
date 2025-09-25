@@ -16,32 +16,29 @@
 ```mermaid
 
 flowchart LR
-    %% Actor
     A[👤 Diamond Sow]
 
-    %% Casos de uso (en óvalos compactos)
-    UC1([Receive Natural Language Reports])
-    UC2([Receive Actionable Alerts])
-    UC3([View Dashboards])
-    UC4([Validate Disease Predictions])
-    UC5([Review Scientific Data Integration])
-    UC6([Ingest Sensor Data via Pub/Sub])
-    UC7([Process Data with Dataflow])
-    UC8([Store & Aggregate Data in BigQuery])
-    UC9([Generate AI Recommendations with Vertex AI])
+    UC1([Generate AI Report])
+    UC2([Predict Cucumber Downy Mildew])
+    UC3([Receive Actionable Alerts])
 
-    %% Relaciones
+    %% Subprocesos internos (includes)
+    INC1([Ingest Sensor Data via Pub/Sub])
+    INC2([Process Data with Dataflow])
+    INC3([Store & Aggregate in BigQuery])
+
+    %% Relaciones principales
     A --> UC1
     A --> UC2
     A --> UC3
-    A --> UC4
-    A --> UC5
-    A --> UC6
-    A --> UC7
-    A --> UC8
-    A --> UC9
 
-
+    %% Includes
+    UC1 -.->|include| INC1
+    UC1 -.->|include| INC2
+    UC1 -.->|include| INC3
+    UC2 -.->|include| INC1
+    UC2 -.->|include| INC2
+    UC2 -.->|include| INC3
 
 ```
 
