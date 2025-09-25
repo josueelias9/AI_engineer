@@ -2,47 +2,66 @@
 ```mermaid
 
 flowchart LR
-    A[👤 Diamond Sow]
+    A[👤 Diamond Sow Operator]
 
-    UC1([Generate AI Report])
-    UC2([Predict Cucumber Downy Mildew])
-    UC3([Receive Actionable Alerts])
+    %% Agrupamos en un subgraph
+    subgraph SYS[System]
+        UC1([Generate AI Report <br> - Textual summary])
+        UC2([Predict Crop Risks <br> ex. Cucumber Downy Mildew])
+        UC3([Receive Actionable Alerts <br> Human-in-the-Loop])
 
-    %% Subprocesos internos (includes)
-    INC1([Ingest Sensor Data via Pub/Sub])
-    INC2([Process Data with Dataflow])
-    INC3([Store & Aggregate in BigQuery])
+        %% Subprocesses (includes)
+        INC1([Ingest sensor data via Pub/Sub])
+        INC2([Process data with Dataflow])
+        INC3([Store & aggregate in BigQuery])
 
-    %% Relaciones principales
+        %% Includes
+        UC1 -.->|include| INC1
+        UC1 -.->|include| INC2
+        UC1 -.->|include| INC3
+
+        UC2 -.->|include| INC1
+        UC2 -.->|include| INC2
+        UC2 -.->|include| INC3
+
+        UC3 -.->|include| INC1
+        UC3 -.->|include| INC2
+        UC3 -.->|include| INC3
+    end
+
+    %% Relaciones del actor con los casos de uso
     A --> UC1
     A --> UC2
     A --> UC3
 
-    %% Includes
-    UC1 -.->|include| INC1
-    UC1 -.->|include| INC2
-    UC1 -.->|include| INC3
-    UC2 -.->|include| INC1
-    UC2 -.->|include| INC2
-    UC2 -.->|include| INC3
 
 ```
 
 
 ```mermaid
 flowchart LR
-    A[IoT Sensors <br> Humidity, Temp, Radiation] -->|Real-time data| B[Pub/Sub]
-    B --> C[Dataflow <br> data cleaning + metrics]
-    C --> D[BigQuery <br> historical storage + metrics]
-    D --> E[Knowledge Base <br> agricultural rules + enriched data]
-    D --> F[Aggregated Metrics <br> 6h, 12h, 24h summaries]
-    J[External Sources <br> Scientific papers + Client data] --> E
-    E --> G[LLM <br> Vertex AI / API]
-    F --> G
-    G --> H[Natural language recommendations]
-    H --> I[Mobile App / Dashboard / SMS Alerts]
-    I --> L[Cloud Function <br> Notification delivery SMS, Email, APIs]
+    A[IoT Sensors <br> Humidity, Temperature, Spectrometry, Light] -->|Data export / future real-time| B[Pub/Sub]
+
+    %% Subgraph para el sistema
+    subgraph SYS[System]
+        B --> C[Dataflow <br> Data cleaning + metric calculation]
+        C --> D[BigQuery <br> Historical storage + analytics]
+        D --> E[Knowledge Base <br> Agricultural rules + enriched data]
+        D --> F[Aggregated Metrics <br> 6h, 12h, 24h summaries]
+        J[External Sources <br> Scientific papers + Client data] --> E
+        E --> G[Vertex AI / LLM <br> Generate insights & recommendations]
+        F --> G
+        G --> L[Cloud Functions <br> Orchestration & delivery]
+    end
+
+    %% Outputs desde Cloud Function
+    L --> H[Textual Recommendations <br> Daily summaries / Alerts]
+    L --> I[Mobile App / Dashboard / SMS Alerts]
+
+    %% Complemento BI
     D --> K[Looker Studio <br> BI dashboards + reports]
+
+
 ```
 
 ```mermaid
