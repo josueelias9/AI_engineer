@@ -1,79 +1,114 @@
-### Slide 1: Title
-“Diamond Sow Gardens is looking to modernize agriculture with AI. Today we’ll walk you through a solution that focuses on real-time monitoring and intelligent action automation.”
+## **Slide 1 – Title**
 
-### Slide 2: About
-“Diamond Sow Gardens is committed to sustainable agriculture, combining traditional methods with modern technology. Our role is to help them harness AI to improve plant health and production.”
+**Speech:**
+“Diamond Sow Gardens is aiming to modernize agriculture with artificial intelligence.
+Today, we’ll present a proof of concept that demonstrates how AI can support **real-time monitoring, intelligent recommendations, and early interventions**—bridging the gap between traditional farming and data-driven agriculture.”
 
-### Slide 3: Current State
-“They already collect real-time data through Ubibot sensors, but they struggle to interpret multi-dimensional signals and automate decisions beyond basic temperature control.”
+---
 
-### Slide 4: Goals
-“The main objective is to create AI systems that interpret complex data and provide actionable recommendations, starting with a cucumber mildew use case and expanding toward full automation.”
+## **Slide 2 – About**
 
-### Slide 5: Use Case 1
+**Speech:**
+“Diamond Sow Gardens specializes in sustainable and biodynamic agriculture.
+They combine deep farming knowledge with strong research partnerships, including Los Alamos National Labs.
+Our role is to introduce **AI tools that complement their mission**, helping them interpret data more effectively and optimize production while staying true to sustainable practices.”
 
+---
 
-```mermaid
+## **Slide 3 – Current State**
 
-flowchart LR
-    A[👤 Diamond Sow]
+**Speech:**
+“Currently, Diamond Sow collects environmental data in real time using sensors like Ubibot and Davis Instruments.
+There is some basic automation—for example, temperature triggers for sidewall control.
+But the pain points are clear:
 
-    UC1([Generate AI Report])
-    UC2([Predict Cucumber Downy Mildew])
-    UC3([Receive Actionable Alerts])
+* There’s no **AI-based analysis**,
+* Multi-source data like humidity, moonlight, and wind is hard to correlate,
+* And there’s no automated reporting or decision support.
 
-    %% Subprocesos internos (includes)
-    INC1([Ingest Sensor Data via Pub/Sub])
-    INC2([Process Data with Dataflow])
-    INC3([Store & Aggregate in BigQuery])
+As a result, valuable insights remain locked in raw data.”
 
-    %% Relaciones principales
-    A --> UC1
-    A --> UC2
-    A --> UC3
+---
 
-    %% Includes
-    UC1 -.->|include| INC1
-    UC1 -.->|include| INC2
-    UC1 -.->|include| INC3
-    UC2 -.->|include| INC1
-    UC2 -.->|include| INC2
-    UC2 -.->|include| INC3
+## **Slide 4 – Goals**
 
-```
+**Speech:**
+“The goal is to turn that raw sensor data into **actionable intelligence**.
+We want to:
 
+* Enable AI-driven monitoring for plant health,
+* Trigger alerts and recommendations when conditions demand action,
+* And begin with a very focused case: **predicting and preventing cucumber downy mildew**.
 
-“This POC will predict cucumber downy mildew risk based on multiple environmental factors and trigger irrigation-based potassium application when needed.”
+The vision is an agentic system that evolves from reporting, to recommending, and eventually to automating greenhouse operations.”
 
-### Slide 6: Use Case 2
-“We’ll use infrared analysis to detect nutrient deficiencies early. The AI will notify agronomists with recommended organic interventions.”
+---
 
-### Slide 7: Use Case 3
-“By analyzing Ubibot environmental data, the AI can recommend or automate greenhouse adjustments for optimal growing conditions.”
+## **Slide 5 – Use Case 1**
 
-### Slide 8: Architecture
-“This architecture integrates Ubibot sensors with GCP tools like Pub/Sub and BigQuery, builds AI models on Vertex AI and TensorFlow, and adds an agent layer for reporting and IoT triggers.”
+**Speech:**
+“Our first use case is **downy mildew prevention in cucumbers**.
+By combining humidity, temperature, wind, and spectral data, the AI can predict the likelihood of mildew outbreaks.
+When risk is high, the system alerts farmers and recommends preventive organic treatments.
+This reduces crop loss and ensures interventions are timely and targeted.”
 
-```mermaid
-flowchart LR
-    A[IoT Sensors <br> Humidity, Temp, Radiation] -->|Real-time data| B[Pub/Sub]
-    B --> C[Dataflow <br> data cleaning + metrics]
-    C --> D[BigQuery <br> historical storage + metrics]
-    D --> E[Knowledge Base <br> agricultural rules + enriched data]
-    D --> F[Aggregated Metrics <br> 6h, 12h, 24h summaries]
-    J[External Sources <br> Scientific papers + Client data] --> E
-    E --> G[LLM <br> Vertex AI / API]
-    F --> G
-    G --> H[Natural language recommendations]
-    H --> I[Mobile App / Dashboard / SMS Alerts]
-    I --> L[Cloud Function <br> Notification delivery SMS, Email, APIs]
-    D --> K[Looker Studio <br> BI dashboards + reports]
-```
+---
 
+## **Slide 6 – Use Case 2**
 
-### Slide 9: Estimate
-“We’ll approach this project using Scrum. The plan is broken into sprints that cover integration, modeling, reporting, and POC validation.”
+**Speech:**
+“The second use case is **nutrient deficiency detection**.
 
-### Slide 10: Next Steps
-“Our immediate action is to clearly define the cucumber mildew triggers and actions, integrate the data, and build the first AI prototype. From there, we validate and expand.”
+no estoy seguro de esto ya que aun no sabemos que tipo de adta tiene el cliente. 
 
+Using infrared and spectrometry data, the AI identifies early signals of stress—before they’re visible to the human eye.
+It then notifies agronomists with organic intervention suggestions, helping maintain healthy growth cycles.”
+
+---
+
+## **Slide 7 – Use Case 3**
+
+**Speech:**
+“The third use case focuses on **greenhouse optimization**.
+By analyzing environmental data streams—temperature, humidity, wind, and light—the AI recommends or even automates adjustments.
+For example, it could suggest venting, irrigation, or light control to keep conditions ideal for plant health.”
+
+---
+
+## **Slide 8 – Architecture**
+
+**Speech:**
+“Here’s the high-level architecture.
+Sensor data is ingested into **Pub/Sub**, processed with **Dataflow**, and stored in **BigQuery** for correlation and analysis.
+Models are trained and served with **Vertex AI** and TensorFlow, generating insights.
+Finally, an **agentic layer** delivers reports, alerts, and potential IoT triggers back to the greenhouse.
+This creates a full loop: from data → intelligence → action.”
+
+---
+
+## **Slide 9 – Estimate**
+
+**Speech:**
+“The POC is designed to run over a **two-month period**, using Scrum to structure delivery.
+We’ll cover:
+
+* Integration of sensors and pipelines,
+* Modeling and training of mildew and nutrient predictors,
+* Automated reporting and alert generation,
+* And validation with Diamond Sow’s agronomists.
+  The estimation details are provided in the CSV for transparency.”
+
+---
+
+## **Slide 10 – Next Steps**
+
+**Speech:**
+“The next steps are straightforward:
+
+1. Confirm datasets and triggers for cucumber mildew,
+2. Define success metrics for AI reports,
+3. Build the first ingestion and analysis pipeline in GCP,
+4. Deliver an initial prototype for validation,
+5. And then expand to more crops and conditions.
+
+This approach ensures that we start focused, deliver value quickly, and scale responsibly.”

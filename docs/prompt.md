@@ -9,11 +9,13 @@ You are an expert AI engineer who will be delivering a solution for the company 
 | diagram       | the diagrams needed for this presentation in Mermaid format |
 | csv           | a CSV that contains the estimation                          |
 
+if the client likes our solution, what was offeerd in this presentation will be implmentented, including the use cases, arquitecture, and estimation time.
+
 # Instructions
 
 * You need to use **GCP and open-source tools**. Direct GCP competitors are not allowed (such as AWS or Azure).
 * Make sure you provide a **complete and professional** response.
-* Remember, this is a **proof of concept (POC)**, not a fully production-ready project. However, it must include everything necessary to make the project attractive to the client.
+* Remember, this workshop is for a possible implementation of  **proof of concept (POC)**, not a fully production-ready project. However, it must include everything necessary to make the project attractive to the client.
 * Projects should last **no longer than 2 months**.
 * Respect the required format. Avoid filler phrases like *“Got it”* or *“Thanks for the detailed context…”*.
 * **Follow the provided example strictly.** Do not add an intro or outro to your response.
@@ -240,6 +242,99 @@ No suggested next steps were found for this meeting.
 
 You should review Gemini's notes to make sure they're accurate. Get tips and learn how Gemini takes notes
 Please provide feedback about using Gemini to take notes in a short survey.
+```
+
+
+```email from Kon, the PM
+Hi Sam,
+
+Following up on our recent discussions about the Diamond Sow Gardens & Zazmic project, we've reviewed the provided data, including the "DismondSowFlowchart" image.
+
+To move forward with the AI component and ensure we're building exactly what's needed, we require a bit more detail, specifically regarding data interpretation, triggers, and actions for the cucumber example.
+
+Could you please provide the following:
+Data Format: What will be the format of the data provided to us (e.g., Excel, endpoint, SQL)?
+Interfaces: How many interfaces will you expose for us to use?
+Detailed Use Case & Logic: A more detailed use case, similar to the cucumber example, explaining the specific logic the agent should follow to make decisions. This should include the reasoning chain and what exactly you expect from the component.
+Component Output: What exactly do you expect the component's output to be?
+To give you an idea of what we're looking for, here's an example:
+Receive data from X and Y sensors via a streaming source, accessed through an endpoint (e.g., POST https://2.2.2.2:8080/getDataFromSensor).
+Apply specific logic to this data (e.g., if X > 5 and Y < 10, then trigger action A).
+Expect to obtain a text/number as an output to make decision Z.
+The more detailed you can be, the faster we can progress.
+
+Thanks,
+```
+
+```response from Sam
+Hi Kon,
+
+Thanks for your follow-up and for reviewing the materials so far.  I have been in a meditation retreat and wanted to give this better undistracted close attention.  OS sorry for the delayed response.
+
+We’re happy to clarify the general structure of the cucumber use case. Please note that while this represents a conceptual model for AI augmentation, it is still in development, and human review remains paramount due to limited data sets,  infrastructure constraints and farm-specific nuances.
+
+
+📦 Data Format
+
+I was told by LANL that we can provide a sample dataset in CSV or Excel format extracted from our UbiBot sensor logs. At this time, the data is not exposed via streaming or a live endpoint. Sensors log environmental conditions (temperature, humidity, light, etc.) at irregular intervals depending on connectivity and power conditions.
+
+
+🔌 Interfaces
+
+There are currently no formalized interfaces. Any “interface” would be a static dataset export for use in the proof-of-concept phase. Longer term, any real-time integrations would require further infrastructure development over the next year 2026.  * I had been working on this from our last meeting but I can discuss this further at our next meeting.
+
+
+🧪 Detailed Use Case & Logic (Human-in-the-Loop)
+
+We are exploring a scenario where environmental patterns may correlate with early downy mildew development on cucumber crops. The conceptual logic is as follows:
+
+Inputs:
+UbiBot sensor readings from the north/south ends of the greenhouse
+(In future iterations: sap nutrient readings, we may not have for this workshop)
+Trigger Pattern (hypothetical logic for AI):
+Temperature > 82°F
+Relative humidity > 85%
+Winds above 5 mph sustained for > 6 hours
+Recent irrigation event (manual flag, not detectable in current dataset)
+Provisional Inference:
+Increased risk of potassium leaching and foliar disease proliferation
+Action Recommendation (non-automated):
+Flag condition for human review
+AI assistant may suggest applying potassium supplementation, but final decision rests with human operator, based on crop stage, visual symptoms, and weather forecasts.
+We emphasize that this model is for conceptual testing only, and we are not expecting the system to make autonomous decisions at this time.
+
+
+📤 Expected Component Output
+
+The desired output is a textual recommendation, such as:
+
+“Based on current conditions, consider assessing potassium availability and checking for early signs of mildew on cucumbers in greenhouse section B.”
+
+Ideally, this would be presented in a daily summary or triggered message if threshold conditions persist.
+
+
+Let us know if this level of detail is helpful, or if you need specific field values for testing.
+
+Best regards,
+
+Sam Starsiak
+
+Diamond Sow Gardens
+```
+
+
+```mermaid (diagram from client)
+flowchart TD
+    A([Start]) --> B[Collect sensor data<br/>- Infrared cameras<br/>- UbiBot<br/>- Soil moisture and temperature sensors]
+    B --> C[Raspberry Pi]
+    B --> D[Downy mildew detected]
+    D --> E[Analyze data<br/>AI]
+    C --> E
+    E --> F[Automate action]
+    C --> G[Report necessary action<br/>Agent]
+    G --> H[Add potassium]
+    F --> H
+    H --> I([End])
 ```
 
 
